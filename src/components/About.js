@@ -4,42 +4,44 @@ import Link from '@mui/material/Link';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { personalData } from '../data.js';
 
 function About() {
+
   return (
     <>
       <Card sx={{ display: 'flex' }}>
         <CardMedia
           component="img"
           sx={{ width: 170 }}
-          image={process.env.PUBLIC_URL + '/logo192.png'}
+          image={personalData.image}
           alt="Live from space album cover"
         />
 
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h6">
-            Shakeel Ahmed
+            {personalData.name}
           </Typography>
           <Typography variant="subtitle2" color="text.secondary">
-            Mac Miller
+            {personalData.title}
           </Typography>
           <Typography variant="subtitle2" color="text.secondary">
-            Mac Miller
+            {personalData.detail}
           </Typography>
           <Typography variant="subtitle2" color="text.secondary">
-            <i class="fas fa-globe-europe"></i> <Link href="https://www.uibk.ac.at/" target="_blank" underline="none" variant="body2">WKO</Link>
-          </Typography>
-
-          <Typography variant="subtitle2" color="text.secondary">
-          <i class="fas fa-phone-alt"></i> <Link underline="none" href={`tel:+15555551212`}>WKO</Link>
+            <i className="fas fa-globe-europe"></i> <Link href={personalData.contacts.website} target="_blank" underline="none" variant="body2">{personalData.contacts.website}</Link>
           </Typography>
 
           <Typography variant="subtitle2" color="text.secondary">
-          <i class="fas fa-envelope"></i> <Link underline="none" href={`mailto:EMAIL`}>WKO</Link>
+          <i className="fas fa-phone-alt"></i> <Link underline="none" href={`tel:${personalData.contacts.phone}`}>{personalData.contacts.phone}</Link>
+          </Typography>
+
+          <Typography variant="subtitle2" color="text.secondary">
+          <i className="fas fa-envelope"></i> <Link underline="none" href={`mailto:${personalData.contacts.email}`}>{personalData.contacts.email}</Link>
           </Typography>
        
           <Typography variant="subtitle2" color="text.secondary">
-            <i class="fab fa-linkedin"></i> <Link href="https://www.uibk.ac.at/" target="_blank" underline="none" variant="body2">WKO</Link>
+            <i class="fab fa-linkedin"></i> <Link href={personalData.contacts.linkedin} target="_blank" underline="none" variant="body2">{personalData.contacts.linkedin}</Link>
           </Typography>
 
         </CardContent>

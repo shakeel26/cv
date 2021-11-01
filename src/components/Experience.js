@@ -3,8 +3,15 @@ import Card from '@mui/material/Card';
 import Link from '@mui/material/Link';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+
+import { experience } from '../data.js';
+
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 
 function Experience() {
+
     return (
         <>
             <Card>
@@ -12,23 +19,27 @@ function Experience() {
                     <Typography gutterBottom variant="h5">
                         <i class="fas fa-briefcase"></i> Experience
                     </Typography>
-                    <Link href="https://www.uibk.ac.at/" target="_blank" underline="none" variant="h6">STI Innsbruck</Link> 2018 - 2022
-                    <Typography inline variant="subtitle1" >
-                        2018 - 2022
-                    </Typography>
-                    <Typography variant="subtitle1">
-                        Responsibilities:
-                    </Typography>
 
-                    <Typography variant="subtitle1">
-                        <ul>
-                            <li>abc</li>
-                        </ul>
-                    </Typography>
+                    {experience.map((eachExperience, key) =>
+                        <div className="experience-card" key={key}>
+                            <Typography inline variant="subtitle1" >
+                                {eachExperience.title}
+                            </Typography>
+                            <Link href={eachExperience.companyWebSite} target="_blank" underline="none" variant="h6">{eachExperience.company}</Link> at {eachExperience.location}
+                            <Typography inline variant="subtitle1" >
+                                {eachExperience.datesBetween}
+                            </Typography>
+                            <Stack direction="row" spacing={1}>
+                                {eachExperience.descriptionTags.map((tag,index)=>
+                                <Chip key={index} label={tag} />                                
+                                )}
+                            </Stack>
+                            <Divider />
+                        </div>
+                    )}
                 </CardContent>
             </Card>
         </>
     );
 }
-
 export default Experience;

@@ -5,6 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import { projects } from '../data.js'
+import Divider from '@mui/material/Divider';
 
 function Project() {
     return (
@@ -14,15 +16,22 @@ function Project() {
                     <Typography gutterBottom variant="h5">
                         <i class="fas fa-tasks"></i> Projects
                     </Typography>
-                    <Link href="https://www.uibk.ac.at/" target="_blank" underline="none" variant="subtitle1">STI Innsbruck</Link> 2021
-                    <Typography variant="body1">
-                        Description Description Description Description Description Description Description Description Description Description 
-                    </Typography>
+                    {projects.map((eachProject, key) =>
+                        <div className="project-card" key={key}>
+                            <Link href={eachProject.projectUrl} target="_blank" underline="none" variant="subtitle1">{eachProject.projectName}</Link>
 
-                    <Stack direction="row" spacing={1}>
-                        <Chip label="PHP" />
-                        <Chip label="PHP" />
-                    </Stack>
+                            <Typography variant="body1">
+                                {eachProject.description}
+                            </Typography>
+
+                            <Stack direction="row" spacing={1}>
+                                {eachProject.projectTags.map((tag, index) =>
+                                    <Chip key={index} label={tag} />
+                                )}
+                            </Stack>
+                        </div>
+                    )}
+
                 </CardContent>
             </Card>
         </>
