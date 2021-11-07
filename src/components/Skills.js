@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import { skills } from '../data.js'
 
 
 function Skills() {
@@ -16,7 +17,9 @@ function Skills() {
                         <i class="fas fa-rocket"></i> Skills
                     </Typography>
                     <Stack direction="row" spacing={1}>
-                        <Chip label="Chip Filled" />
+                        {skills.map((skill, i) =>
+                        <Chip label={skill} key={i}>{i}</Chip >                        
+                        )}
                     </Stack>
                 </CardContent>
             </Card>

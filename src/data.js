@@ -76,19 +76,18 @@ export const experience = [
 
 export const projects = [
   {
-    projectName: 'Company Name',
+    projectName: 'Project Name',
     description: 'Optional Optional Optional Optional Optional',
     projectUrl: 'optional',
     projectTags: ['Javascript', 'React', 'PHP']
   },
   {
-    projectName: 'Company Name',
+    projectName: 'Project Name',
     description: 'Optional',
     projectUrl: 'optional',
     projectTags: ['Javascript', 'React']
   }
 ]
-
 
 
 
