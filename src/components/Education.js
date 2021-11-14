@@ -19,17 +19,19 @@ function Education() {
 
           {education.map((eachEducation, key) =>
             <div className="education-card" key={key}>
-              <Typography inline variant="subtitle1">
-                {eachEducation.degree}
-              </Typography>
-              <Typography className="degree-year" inline variant="subtitle1" >
-                {eachEducation.year}
-              </Typography>
-              <Link href={eachEducation.universityLink} target="_blank" underline="none" variant="h6">{eachEducation.universityName}</Link>              
+              <div className="singleLine">
+                <Typography className="attributeName" inline variant="subtitle1" sx={{ fontWeight: 'bold', m: 1 }}>
+                  {eachEducation.degree}
+                </Typography>
+                <Typography inline variant="subtitle1" >
+                  {eachEducation.year}
+                </Typography>
+              </div>
+              <Link href={eachEducation.universityLink} target="_blank" underline="none" variant="h6">{eachEducation.universityName}</Link>
               <Divider />
             </div>
           )}
-          
+
         </CardContent>
       </Card>
     </>

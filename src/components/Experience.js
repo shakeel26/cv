@@ -25,13 +25,18 @@ function Experience() {
                             <Typography inline variant="subtitle1" >
                                 {eachExperience.title}
                             </Typography>
-                            <Link href={eachExperience.companyWebSite} target="_blank" underline="none" variant="h6">{eachExperience.company}</Link> at {eachExperience.location}
-                            <Typography inline variant="subtitle1" >
-                                {eachExperience.datesBetween}
-                            </Typography>
+
+                            <div className="singleLine">
+                                <Typography className="attributeName" inline>
+                                    <Link href={eachExperience.companyWebSite} target="_blank" underline="none" variant="h6">{eachExperience.company}</Link> at {eachExperience.location}
+                                </Typography>
+                                <Typography className="attributeYear" inline variant="subtitle1" >
+                                    {eachExperience.datesBetween}
+                                </Typography>
+                            </div>
                             <Stack direction="row" spacing={1}>
-                                {eachExperience.descriptionTags.map((tag,index)=>
-                                <Chip key={index} label={tag} />                                
+                                {eachExperience.descriptionTags.map((tag, index) =>
+                                    <Chip key={index} label={tag} />
                                 )}
                             </Stack>
                             <Divider />

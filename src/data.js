@@ -1,4 +1,3 @@
-
 export const personalData = {
   name: 'Shakeel Ahmed',
   title: 'Self Employed - IT Services',
@@ -26,16 +25,16 @@ export const sections = [
 
 export const education = [
   {
-    degree: 'Computer Engineering (BS)',
-    year: '2013 - 2017',
-    universityName: 'ABC name ',
-    universityLink: 'https://sample.edu'
+    degree: 'MSc Computer Science',
+    year: '2018 - Present',
+    universityName: 'Universität Innsbruck',
+    universityLink: 'https://www.uibk.ac.at/'
   },
   {
-    degree: 'Some Department (PHD)',
-    year: '2017 - Present',
+    degree: 'BSc Computer Science',
+    year: '2010 - 2014',
     universityName: 'ABC name ',
-    universityLink: 'https://sample.edu'
+    universityLink: 'https://www.comsats.edu.pk/'
   }
 ]
 

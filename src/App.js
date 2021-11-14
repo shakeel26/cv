@@ -6,13 +6,14 @@ import Skills from './components/Skills';
 import Project from './components/Project';
 import Language from './components/Language';
 import Hobby from './components/Hobby';
+import Test from './components/Test';
 import Divider from '@mui/material/Divider';
 import './App.css';
 
 
 const App = () => {
   return (
-    <>
+    <div className="mainContent">
       <About />
 
       <Divider />
@@ -39,7 +40,7 @@ const App = () => {
 
       <Hobby />
 
-    </>
+    </div>
   );
 }
 export default App;
