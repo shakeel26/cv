@@ -4,6 +4,8 @@ import Link from '@mui/material/Link';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
+import Stack from '@mui/material/Stack';
+import Chip from '@mui/material/Chip';
 
 import { education } from '../data.js'
 
@@ -28,20 +30,28 @@ function Education() {
                 </Typography>
               </div>
               <Link href={eachEducation.universityLink} target="_blank" underline="none" variant="h6">{eachEducation.universityName}</Link>
-              <Divider />
 
-              {eachEducation.thesis ? eachEducation.thesis.map((item, index) => 
+              {eachEducation.thesis ? eachEducation.thesis.map((item, index) =>
                 <div key={index} >
                   <Typography>
-                    {item.title}
+                    <b> {item.title} </b> : {item.description}
                   </Typography>
+
+                  <Stack direction="row" spacing={1}>
+                    {item.techUsed.map((tag, index) =>
+                      <Chip key={index} label={tag} />
+                    )}
+                  </Stack>
                 </div>
               ) : null}
+              <Divider />
             </div>
+
           )}
 
         </CardContent>
       </Card>
+
     </>
   );
 }

@@ -18,20 +18,15 @@ function Project() {
                     </Typography>
                     {projects.map((eachProject, key) =>
                         <div className="project-card" key={key}>
-                            <Link href={eachProject.projectUrl} target="_blank" underline="none" variant="subtitle1">{eachProject.projectName}</Link>
-
-                            <Typography variant="body1">
-                                {eachProject.description}
-                            </Typography>
-
+                            <Link href={eachProject.projectUrl} target="_blank" underline="none" variant="subtitle1"> <b>{eachProject.projectName} </b></Link> : {eachProject.description}
                             <Stack direction="row" spacing={1}>
                                 {eachProject.projectTags.map((tag, index) =>
                                     <Chip key={index} label={tag} />
                                 )}
                             </Stack>
+                            <Divider />
                         </div>
                     )}
-
                 </CardContent>
             </Card>
         </>

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core';
-
 import Card from '@mui/material/Card';
 import Link from '@mui/material/Link';
 import CardMedia from '@mui/material/CardMedia';
@@ -20,6 +19,12 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     backgroundColor: 'aliceblue'
 
+  },
+  img: {
+    width: '150px',
+    height: '200px',
+    marginTop: '7%'
+
   }
 }));
 
@@ -31,13 +36,16 @@ function About() {
   return (
     <>
       <Card sx={{ display: 'flex' }}>
-        <CardMedia
+        {/* <CardMedia
           // className={classes.cardstyle}
           component="img"
           sx={{ width: 170 }}
           image={personalData.image}
           alt="Live from space album cover"
-        />
+        /> */}
+
+        <img className={classes.img} src={personalData.image} alt="boohoo" />
+
 
         <CardContent className={classes.cardContent} sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h6">
@@ -54,15 +62,24 @@ function About() {
           </Typography>
 
           <Typography variant="subtitle2" color="text.secondary">
-            <i className="fas fa-phone-alt"></i> <Link underline="none" href={`tel:${personalData.contacts.phone}`}>{personalData.contacts.phone}</Link>
+            <i class="fab fa-linkedin"></i> <Link href={personalData.contacts.linkedin} target="_blank" underline="none" variant="body2">{personalData.contacts.linkedin}</Link>
+          </Typography>
+
+          <Typography variant="subtitle2" color="text.secondary">
+            <i class="fab fa-github"></i> <Link href={personalData.contacts.github} target="_blank" underline="none" variant="body2">{personalData.contacts.github}</Link>
           </Typography>
 
           <Typography variant="subtitle2" color="text.secondary">
             <i className="fas fa-envelope"></i> <Link underline="none" href={`mailto:${personalData.contacts.email}`}>{personalData.contacts.email}</Link>
           </Typography>
 
+
           <Typography variant="subtitle2" color="text.secondary">
-            <i class="fab fa-linkedin"></i> <Link href={personalData.contacts.linkedin} target="_blank" underline="none" variant="body2">{personalData.contacts.linkedin}</Link>
+            <i className="fas fa-phone-alt"></i> <Link underline="none" href={`tel:${personalData.contacts.phone}`}>{personalData.contacts.phone}</Link>
+          </Typography>
+
+          <Typography variant="subtitle2" color="text.secondary">
+            <i class="fa fa-map-marker"></i> <Link href={personalData.contacts.location} target="_blank" underline="none" variant="body2">{personalData.contacts.location}</Link>
           </Typography>
 
         </CardContent>
