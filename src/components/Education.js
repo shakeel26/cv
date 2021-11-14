@@ -29,6 +29,14 @@ function Education() {
               </div>
               <Link href={eachEducation.universityLink} target="_blank" underline="none" variant="h6">{eachEducation.universityName}</Link>
               <Divider />
+
+              {eachEducation.thesis ? eachEducation.thesis.map((item, index) => 
+                <div key={index} >
+                  <Typography>
+                    {item.title}
+                  </Typography>
+                </div>
+              ) : null}
             </div>
           )}
 

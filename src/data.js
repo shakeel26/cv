@@ -8,8 +8,8 @@ export const personalData = {
     email: 'shakeel.uibk@gmail.com',
     phone: '+43 660 755 3781',
     linkedin: 'https://www.linkedin.com/in/shakeel26/',
-    location: 'Innsbruck, Austria',
-    github: 'https://github.com/shakeel26/'
+    github: 'https://github.com/shakeel26/',
+    location: 'Innsbruck, Austria'
   }
 }
 
@@ -28,13 +28,25 @@ export const education = [
     degree: 'MSc Computer Science',
     year: '2018 - Present',
     universityName: 'Universität Innsbruck',
-    universityLink: 'https://www.uibk.ac.at/'
+    universityLink: 'https://www.uibk.ac.at/',
+    thesis: [
+      {
+        title: 'Thesis Name',
+        description: 'Thesis Desc',
+        techUsed: ['NLP', 'Knowledge Graphs']
+      }
+    ]
   },
   {
     degree: 'BSc Computer Science',
     year: '2010 - 2014',
-    universityName: 'ABC name ',
-    universityLink: 'https://www.comsats.edu.pk/'
+    universityName: 'COMSATS University Islamabad',
+    universityLink: 'https://www.comsats.edu.pk/',
+    thesis: [{
+      title: 'project Name',
+      description: 'projct Desc',
+      techUsed: ['Mobile app ', 'JavaScript']
+    }]
   }
 ]
 
